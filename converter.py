@@ -37,8 +37,8 @@ def csvToical(input_file, output_file):
                 event.add('dtstamp', datetime.replace( datetime.now(), tzinfo=LocalTimezone() ))
             cal.add_component(event)
            
-        with open(output_file, 'wb') as out_f:
-            out_f.write(cal.to_ical())
+        with open(output_file, 'w') as out_f:
+            out_f.write(cal.to_ical().decode('utf-8'))
             out_f.close()
 
 def main(args):
